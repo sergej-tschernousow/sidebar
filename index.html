@@ -3,10 +3,54 @@
    <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+         rel="stylesheet"
+      />
       <link rel="stylesheet" href="styles/style.css" />
       <title>Document</title>
    </head>
    <body>
+      <nav class="sidebar-menu">
+         <button class="menu-btn">
+            <img src="./icons/menu.svg" alt="menu" />
+         </button>
+         <div class="sidebare">
+            <button class="close">
+               <img src="./icons/close.svg" alt="close button" />
+            </button>
+            <ul>
+               <li><a href="#">Elemet 1</a></li>
+               <li>
+                  Elemet 2
+                  <ul>
+                     <li><a href="#">Subelement 1</a></li>
+                     <li><a href="#">Subelement 2</a></li>
+                     <li><a href="#">Subelement </a></li>
+                  </ul>
+               </li>
+               <li>
+                  Elemet 3
+                  <ul>
+                     <li><a href="#">Subelement 1</a></li>
+                     <li><a href="#">Subelement 2</a></li>
+                  </ul>
+               </li>
+               <li><a href="#">Elemet 4</a></li>
+               <li><a href="#">Elemet 5</a></li>
+               <li>
+                  Elemet 6
+                  <ul>
+                     <li><a href="#">Subelement 1</a></li>
+                     <li><a href="#">Subelement 2</a></li>
+                  </ul>
+               </li>
+            </ul>
+         </div>
+      </nav>
+
       <script src="./script.js"></script>
    </body>
 </html>
