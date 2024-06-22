@@ -15,16 +15,22 @@ body {
 ul {
    list-style: none;
 }
+
 a {
    text-decoration: none;
    color: #c5d1de;
+   cursor: pointer;
+   transition: 0.3s ease;
 }
+
 button {
    border: none;
    outline: none;
    background-color: #2d333b;
-   transition: 0.2s ease;
+   transition: 0.3s ease;
+   cursor: pointer;
 }
+
 .sidebar-menu {
    padding: 10px 15px;
    border-bottom: 1px solid #737a81;
@@ -39,21 +45,106 @@ button {
    display: flex;
    justify-content: center;
    align-items: center;
-   cursor: pointer;
 }
+
 .menu-btn:hover {
    border-color: #737a81;
 }
-.sidebare {
-   display: none;
+.sidebar {
    position: absolute;
    top: 0;
    left: 0;
-   max-width: 420px;
-   padding: 25px 15px;
+   width: 420px;
+   height: 100%;
+   padding: 40px 20px;
    background-color: #3e4651;
    border: 1px solid #737a81;
    border-left: none;
    border-top-right-radius: 5px;
    border-bottom-right-radius: 5px;
+
+   transform: translateX(-100%);
+   transition: 0.5s ease;
+}
+
+.sidebar.active {
+   transform: translateX(0);
+}
+
+.close-btn {
+   position: absolute;
+   top: 15px;
+   right: 15px;
+   width: 30px;
+   height: 30px;
+   background-color: #3e4651;
+   border: 2px solid #3e4651;
+   border-radius: 50%;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.close-btn:hover {
+   border-color: #c5d1de;
+}
+
+.sidebar a {
+   position: relative;
+   display: block;
+   padding: 12px 10px;
+   border-bottom: 1px solid #939597;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.sidebar a::before {
+   content: '';
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   width: 0;
+   height: 1px;
+
+   background-color: #eaeced;
+   transition: 0.5s ease;
+}
+
+.sidebar a:hover::before {
+   width: 100%;
+}
+
+.sidebar a img {
+   transition: 0.3s ease;
+}
+
+.sidebar a:hover > img {
+   transform: rotate(90deg);
+}
+
+.sub-menu {
+   overflow: hidden;
+   transition: 1s ease;
+   margin-left: 15px;
+}
+
+.sub-menu li {
+   -webkit-transition: max-height 0.5s, padding 0.5s;
+   transition: max-height 0.5s, padding 0.5s;
+   max-height: 0;
+}
+
+.sidebar > ul > li:hover .sub-menu > li {
+   max-height: 50px;
+}
+
+@media screen and (max-width: 420px) {
+   .sidebar {
+      width: 100%;
+   }
+   .sub-menu {
+      margin-left: 0;
+   }
 }
